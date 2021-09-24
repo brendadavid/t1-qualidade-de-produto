@@ -2,14 +2,15 @@
 
 public class App {
 
-    public static void identificaTriangulo(double a, double b, double c) {
+    public static String identificaTriangulo(double a, double b, double c) {
 
-
+        String result = "";
         double AA = Math.max(a, Math.max(b, c));
         double BB = 0;
         double CC = 0;
-        if(a < 0 || b < 0 || c < 0) {
-            System.out.println("ENTRADA INVÁLIDA");
+
+        if(a <= 0 || b <= 0 || c <= 0) {
+            result = "ENTRADA INVALIDA";
         }
         else {
             if (AA == a) {
@@ -24,33 +25,32 @@ public class App {
                 BB = Math.max(b, a);
                 CC = Math.min(b, a);
             }
-
-
             if (AA >= (BB + CC)) {
-                System.out.println("NAO FORMA TRIANGULO");
+                result = "NAO FORMA TRIANGULO";
 
             } else if (AA * AA > ((BB * BB) + (CC * CC))) {
-                System.out.println("TRIANGULO OBTUSANGULO");
+                result = "TRIANGULO OBTUSANGULO";
+
             }
             if (AA * AA == ((BB * BB) + (CC * CC))) {
-                System.out.println("TRIANGULO RETANGULO");
+                result = "TRIANGULO RETANGULO";
             }
-
             if (AA * AA < ((BB * BB) + (CC * CC))) {
-                System.out.println("TRIANGULO ACUTANGULO");
+                result = "TRIANGULO ACUTANGULO";
             }
             if ((AA == BB) && (AA == CC)) {
-                System.out.println("TRIANGULO EQUILATERO");
+                result = result + "\n" + "TRIANGULO EQUILATERO";
             }
             if (((AA == BB) && (AA != CC)) || ((AA == CC) && (AA != BB)) || ((BB == CC) && (BB != AA))) {
-                System.out.println("TRIANGULO ISOSCELES");
+                result = result + "\n" + "TRIANGULO ISOSCELES";
             }
         }
+        return result;
     }
 
     public static void main(String[] args) {
 
-        identificaTriangulo(6.0,6.0,-7.0);
+        System.out.println(identificaTriangulo(7.0,5.0,7.0));
     }
 }
 
