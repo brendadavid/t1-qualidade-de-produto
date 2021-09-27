@@ -25,7 +25,7 @@ public class App {
                 BB = Math.max(b, a);
                 CC = Math.min(b, a);
             }
-            if (AA >= (BB + CC)) {
+            if (AA >= (BB + CC) || AA == 90 && BB == 90 && CC == 90) {
                 result = "NAO FORMA TRIANGULO";
 
             } else if (AA * AA > ((BB * BB) + (CC * CC))) {
@@ -35,13 +35,13 @@ public class App {
             if (AA * AA == ((BB * BB) + (CC * CC))) {
                 result = "TRIANGULO RETANGULO";
             }
-            if (AA * AA < ((BB * BB) + (CC * CC))) {
+            if (AA * AA < ((BB * BB) + (CC * CC)) && AA < 90 && BB < 90 && CC < 90) {
                 result = "TRIANGULO ACUTANGULO";
             }
-            if ((AA == BB) && (AA == CC)) {
+            if ((AA == BB) && (AA == CC) && AA < 60 && BB < 60 && CC < 60) {
                 result = result + "\n" + "TRIANGULO EQUILATERO";
             }
-            if (((AA == BB) && (AA != CC)) || ((AA == CC) && (AA != BB)) || ((BB == CC) && (BB != AA))) {
+            if (((AA == BB) && (AA != CC)) || ((AA == CC) && (AA != BB)) || ((BB == CC) && (BB != AA)) && !(AA >= (BB + CC))) {
                 result = result + "\n" + "TRIANGULO ISOSCELES";
             }
         }
@@ -50,7 +50,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.println(identificaTriangulo(7.0,5.0,7.0));
+        System.out.println(identificaTriangulo(90.0,90.0,1.0));
     }
 }
 
