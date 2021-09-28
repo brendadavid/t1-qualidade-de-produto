@@ -14,7 +14,7 @@ Para cobrir todas as branches seria necessário ajustar algumas validações do 
 
 ![Imagem Teste 2](./Imagens/Branches.png)
 
-#Comentario
+# Comentario
 
 O integrante do grupo Arthur teve um problema ao fazer o commit da sua branch pelo VsCode e o commit acabou sendo feito direto na Master conforme histórico de commits da classe de testes:
 
